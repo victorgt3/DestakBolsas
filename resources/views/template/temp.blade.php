@@ -42,7 +42,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{url('/home')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>d</b>b</span>
       <!-- logo for regular state and mobile devices -->
@@ -324,8 +324,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li class="active"><a href="{{url('/categorias')}}"><i class="fa fa-circle-o"></i>Cadastro</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -403,10 +402,9 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.3.7
+      
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>&copy; 2017 DestakBolsas.</strong>
   </footer>
 
   <!-- Control Sidebar -->

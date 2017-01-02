@@ -42,7 +42,7 @@
             <div class="icon">
               <i class="ion ion-ios-albums-outline"></i>
             </div>
-            <a href="#" class="small-box-footer">Cadastrar <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{url('/categorias')}}" class="small-box-footer">Cadastrar <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

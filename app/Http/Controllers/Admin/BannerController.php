@@ -7,5 +7,5 @@ use App\Http\Controllers\Controller;
 
 class BannerController extends Controller
 {
-    //
+    
 }

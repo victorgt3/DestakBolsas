@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/categorias', 'Admin\CategoriaController@index');
+Route::post('/categorias/salvar', 'Admin\CategoriaController@salvar');
