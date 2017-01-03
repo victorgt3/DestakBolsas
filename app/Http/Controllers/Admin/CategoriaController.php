@@ -9,7 +9,8 @@ class CategoriaController extends Controller
 {
     public function index()
     {
-    	$categorias = \App\Categoria::paginate(15);
+    	$categorias = \App\categoria::paginate(3);
+        
 
     	return view('categorias.index',compact('categorias'));
     }
@@ -23,6 +24,6 @@ class CategoriaController extends Controller
 			'class'=>"alert-success"
     	]);
 
-    	return redirect()->route('categorias');
+    	return redirect()->route('categorias.index');
     }
 }

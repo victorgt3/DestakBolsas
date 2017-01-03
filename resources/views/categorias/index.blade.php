@@ -50,13 +50,13 @@
                                 <th>Ação</th>
                             </tr>
                         </thead>
-                        @foreach($categorias as $categorias)
+                        @foreach($categorias as $categoria)
                         <tbody>
                            
 
                             <tr>
-                                <th>{{$categorias->id}}</th>
-                                <td>{{$categorias->nome}}</td>
+                                <th>{{$categoria->id}}</th>
+                                <td>{{$categoria->nome}}</td>
                                 <td>
                                     <a class="btn btn-default" href="#">Editar</a>
                                     <a class="btn btn-danger" href="javascript:(confirm('Deletar esse registro?') ? window.location.href='#' : false)">Deletar</a>
@@ -66,13 +66,20 @@
                          
                             
                         </tbody>
+
                         @endforeach
+                            
+                             
+                       
                     </table>
 
-                  
+                    <div align="center">
+                                {{$categorias->links()}}
+                            </div>
+                 
 
             </div>
-                       
+                      
             </div>
          </div>
      </div>

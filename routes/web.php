@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/categorias', 'Admin\CategoriaController@index');
-Route::post('/categorias/salvar', 'Admin\CategoriaController@salvar');
+Route::get('/categorias', ['uses'=>'Admin\CategoriaController@index','as'=>'categorias.index']);
+Route::post('/categorias/salvar', ['uses'=>'Admin\CategoriaController@salvar','as'=>'categorias.salvar']);
