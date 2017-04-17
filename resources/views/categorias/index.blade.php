@@ -39,10 +39,11 @@
     <div class="row">
         <div class="col-md-12" style=" width: 96%;">
             <div class="panel panel-default">
-               
+            @foreach($categorias as $categoria)   
         	<div class="box-body">
             
               <table id="example2" class="table table-bordered table-hover">
+
                 <thead>
                             <tr>
                                 <th>Codigo</th>
@@ -50,7 +51,7 @@
                                 <th>Ação</th>
                             </tr>
                         </thead>
-                        @foreach($categorias as $categoria)
+                        
                         <tbody>
                            
 
@@ -67,19 +68,19 @@
                             
                         </tbody>
 
-                        @endforeach
+                        
                             
                              
                        
                     </table>
-
-                    <div align="center">
+                   
+                            <div align="center">
                                 {{$categorias->links()}}
                             </div>
                  
 
             </div>
-                      
+               @endforeach        
             </div>
          </div>
      </div>
