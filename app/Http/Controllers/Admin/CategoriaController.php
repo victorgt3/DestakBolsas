@@ -26,4 +26,23 @@ class CategoriaController extends Controller
 
     	return redirect()->route('categorias.index');
     }
+	 /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $categorias = \App\Categoria::find($id);
+
+        $categorias->delete();
+       
+        \Session::flash('flash_message',[
+            'msg'=>"Categoria deletada com Sucesso!",
+            'class'=>"alert-success"
+        ]);
+
+        return redirect()->route('categorias.index');
+    }
 }

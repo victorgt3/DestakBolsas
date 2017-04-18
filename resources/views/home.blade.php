@@ -72,7 +72,7 @@
             <div class="icon">
               <i class="ion ion-load-b"></i>
             </div>
-            <a href="#" class="small-box-footer">Cadastrar <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('marcas.index')}}" class="small-box-footer">Cadastrar <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

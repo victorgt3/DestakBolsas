@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="zxx"> 
+
+<html lang="pt-br"> 
 <!-- Head -->
 <head>
 <link rel="icon" href="images/destak.png"/>
@@ -8,7 +8,6 @@
 <!-- Meta-Tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="keywords" content="Groovy Apparel a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //Meta-Tags -->
 
