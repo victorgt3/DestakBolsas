@@ -26,6 +26,29 @@ class CategoriaController extends Controller
 
     	return redirect()->route('categorias.index');
     }
+    public function edit($id)
+    {
+       $categorias = \App\Categoria::find($id);
+        return view('categorias.editar',compact('categorias'));
+    }
+     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        \App\Categoria::find($id)->update($request->all());
+
+    	\Session::flash('flash_message',[
+			'msg'=>"categoria foi atualizada com Sucesso!",
+			'class'=>"alert-success"
+    	]);
+
+    	return redirect()->route('categorias.index');
+    }
 	 /**
      * Remove the specified resource from storage.
      *

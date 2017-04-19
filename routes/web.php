@@ -22,6 +22,9 @@ Route::get('/home', 'HomeController@index');
 Route::get('/categorias', ['uses'=>'Admin\CategoriaController@index','as'=>'categorias.index']);
 Route::post('/categorias/salvar', ['uses'=>'Admin\CategoriaController@salvar','as'=>'categorias.salvar']);
 Route::get('/categorias/destroy/{id}', ['uses'=>'Admin\CategoriaController@destroy','as'=>'categorias.destroy']);
+Route::put('/categorias/update/{id}', ['uses'=>'Admin\CategoriaController@update','as'=>'categorias.update']);
+Route::get('categorias{id}', ['uses'=>'Admin\CategoriaController@edit','as'=>'categorias.edit']);
+
 
 Route::resource('/marcas', 'Admin\MarcaController');
 Route::get('/marcas/destroy/{id}', ['uses'=>'Admin\MarcaController@destroy','as'=>'marcas.destroy']);
