@@ -51,7 +51,7 @@ class MarcaController extends Controller
     public function edit($id)
     {
        $marcas = Marca::find($id);
-        return view('marcas.edit',compact('marcas'));
+        return view('marcas.editar',compact('marcas'));
     }
 
     /**
@@ -63,7 +63,7 @@ class MarcaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        \App\Marca::update($request->all());
+        \App\Marca::find($id)->update($request->all());
 
     	\Session::flash('flash_message',[
 			'msg'=>"marca foi atualizada com Sucesso!",

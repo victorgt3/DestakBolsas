@@ -36,7 +36,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12" style=" width: 96%;">
+        <div class="col-md-6">
             <div class="panel panel-default">
             
         	<div class="box-body">
@@ -59,7 +59,7 @@
                                 <td>{{$marca->nome}}</td>
                                 <td>
                              
-                                    <a class="btn btn-default" href="#">Editar</a>
+                                    <a class="btn btn-default" href="{{route('marcas.edit',$marca->id)}}">Editar</a>
                                     <a class="btn btn-danger" href="javascript:(confirm('Deseja deletar esse registro?') ? window.location.href='{{route('marcas.destroy',$marca->id)}}' : FALSE)">Deletar</a>
                             
                                 </td>

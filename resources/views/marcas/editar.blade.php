@@ -13,12 +13,14 @@
                     <li class="active">Marcas</li>
                 </ol>
 
-                <div class="panel-body">                                    
-                    <form action="{{ route('marcas.store') }}" method="post">
+                <div class="panel-body">
+                                                  
+                    <form action="{{ route('marcas.update',$marcas->id) }}" method="post">
                         {{ csrf_field() }}
+                         <input type="hidden" name="_method" value="put">
                          <div class="form-group {{ $errors->has('nome') ? 'has-error' : '' }}">
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" class="form-control" placeholder="Nome da marca">
+                            <input type="text" name="nome" class="form-control" value="{{$marcas->nome}}">
                             @if($errors->has('nome'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('nome') }}</strong>
@@ -28,9 +30,12 @@
                         <button class="btn btn-info">Atualizar</button>
                         
                     </form>
-                    
-
+                
                 </div>
             </div>
         </div>
     </div>
+</div>
+@endsection
+  
+

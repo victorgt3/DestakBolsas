@@ -37,7 +37,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12" style=" width: 96%;">
+        <div class="col-md-6 centered">
             <div class="panel panel-default">
               
         	<div class="box-body">
