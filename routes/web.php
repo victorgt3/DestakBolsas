@@ -30,3 +30,4 @@ Route::resource('/marcas', 'Admin\MarcaController');
 Route::get('/marcas/destroy/{id}', ['uses'=>'Admin\MarcaController@destroy','as'=>'marcas.destroy']);
 Route::get('edit{id}', ['uses'=>'Admin\MarcaController@edit','as'=>'marcas.edit']);
 
+Route::get('produtos', ['uses'=>'Admin\ProdutoController@index','as'=>'produtos.index']);
