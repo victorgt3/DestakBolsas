@@ -13,4 +13,22 @@ class Produto extends Model
         'ativo','marcas_id'
         
         ];
+   public function imagens()
+   {
+       return $this->hasMany('App\FotoProduto');
+   }
+
+   public function addImagens(FotoProduto $img)
+   {
+       return $this->imagens()->save($img);
+   }
+    public function categoria()
+   {
+       return $this->belongsTo('App\Categoria');
+   }
+
+    public function marca()
+   {
+       return $this->belongsTo('App\Marca');
+   }     
 }

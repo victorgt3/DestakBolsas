@@ -15,84 +15,22 @@
 @section('content')
 <div class="container">
 	<div>
-         <h1 style="text-align: center;">Produtos</h1>
+         <h1 style="text-align: center;">Cadastro de produto</h1>
     </div>
     <div class="row">
         <div class="col-md-12" style="width: 96%;">
             <div class="panel panel-default">                
                 <ol class="breadcrumb panel-heading">
                     <li><a href="{{url('/home')}}">Home</a></li>
-                    <li class="active">Produtos</li>
+                    <li class="active">Cadastro de produto</li>
                 </ol>
 
                 <div class="panel-body">
-                                                  
-                    <form action="#" method="post">
-                        {{ csrf_field() }}
-                         <div class="col-md-4 form-group {{ $errors->has('categoria') ? 'has-error' : '' }}">
-                            <label for="categoria">Categoria</label>
-                            <select id="categoria" class="form-control" name="categoria">
-                                <option></option>
-                            </select>
-                          @if($errors->has('categoria'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('categoria') }}</strong>
-                                </span>
-                            @endif
-                        </div> 
-                        <div class="col-md-4 form-group {{ $errors->has('marca') ? 'has-error' : '' }}">
-                            <label for="marca">Marca</label>
-                            <select id="marca" class="form-control" name="marca">
-                                <option></option>
-                            </select>
-                          @if($errors->has('marca'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('marca') }}</strong>
-                                </span>
-                            @endif
-                        </div>         
-                         
-                         <div class="col-md-4 form-group {{ $errors->has('nome') ? 'has-error' : '' }}">
-                            <label for="nome">Nome</label>
-                            <input type="text" name="nome" class="form-control">
-                            @if($errors->has('nome'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('nome') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                        <div class="col-md-4 form-group {{ $errors->has('ativo') ? 'has-error' : '' }}">
-                            <label for="ativo">Ativo</label>
-                            <select id="ativo" class="form-control" name="ativo">
-                                <option>Sim</option>
-                                <option>Não</option>
-                            </select>
-                          @if($errors->has('ativo'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('ativo') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                         <div class="col-md-4 form-group {{ $errors->has('descrição') ? 'has-error' : '' }}">
-                            <label for="valor">Valor</label>
-                            <input type="text" name="valor" class="form-control">
-                            @if($errors->has('valor'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('valor') }}</strong>
-                                </span>
-                            @endif
-                        </div>    
-                        <br><br><br><br><br><br><br>
-                         <div class="box-body pad">
-                            <label for="descricao">Descrição</label>
-                             <textarea id="editor1" name="editor1" rows="200" cols="100">
-                                    Escreva aqui sua descrição sobre o produto.
-                            </textarea> 
-                        </div>                      
-                        <button class="btn btn-info">Salvar</button>
-                        
-                    </form>
-                
+                    <form action="{{route('produtos.salvar')}}" method="post" enctype="multipart/form-data">
+                             {{ csrf_field() }}
+                             @include('produtos._form')  
+                        <button class="btn btn-info pull-right">Salvar</button>                        
+                    </form>                             
                 </div>
             </div>
         </div>
@@ -118,7 +56,7 @@
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace('editor1');
+    CKEDITOR.replace('descricao');
     //bootstrap WYSIHTML5 - text editor
     $(".textarea").wysihtml5();
   });
