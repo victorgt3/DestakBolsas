@@ -22,31 +22,37 @@ class ProdutoController extends Controller
     public function salvar(Request $request)
     {    
         
-        $foto = FotoProduto::all();
-
-        $produto = new Produto();
-        $produto->categorias_id = $request->get('categorias');
-        $produto->marcas_id = $request->get('marcas'); 
-        $produto->nome = $request->get('nome'); 
-        $produto->ativo = $request->get('ativo');
-        $produto->valor = $request->get('valor'); 
-        $produto->descricao = $request->get('descricao');
-        $produto->save();     
-        
+        $produto = FotoProduto::all();
+       
+        $registro = $request->all();
     
+        $registro = new Produto();
+        $registro->categorias_id = $request->get('categorias');
+        $registro->marcas_id = $request->get('marcas'); 
+        $registro->nome = $request->get('nome'); 
+        $registro->ativo = $request->get('ativo');
+        $registro->valor = $request->get('valor'); 
+        $registro->descricao = $request->get('descricao');
+
+        $registro->save();     
+        
+        $id = $registro->id;
+
+
+        
         if($request->hasFile('imagens')){
             
             $arquivos = $request->file('imagens');
             foreach($arquivos as $imagem ){
-                $foto = new FotoProduto();
+                $registro = new FotoProduto();
                 $rand = rand(11111,99999);
-                $diretorio = "img/galeria/".str_slug('_')."/";
-                $ext = $file->guessClienExtension();
+                $diretorio = "img/galeria/".str_slug($registro->imagem,'_')."/";
+                $ext = $imagem->guessClientExtension();
                 $nomeArquivo = "_img_".$rand.".".$ext;
-                $file->move($diretorio,$nomeArquivo);
-    
-                $foto->imagem = $diretorio.'/'.$nomeArquivo;
-                $foto->save();
+                $imagem->move($diretorio,$nomeArquivo);
+                $registro->produtos_id = $id;
+                $registro->imagem = $diretorio.'/'.$nomeArquivo;
+                $registro->save();
                
             }
         }
