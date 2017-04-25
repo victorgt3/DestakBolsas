@@ -46,7 +46,7 @@ class ProdutoController extends Controller
             foreach($arquivos as $imagem ){
                 $registro = new FotoProduto();
                 $rand = rand(11111,99999);
-                $diretorio = "img/galeria/";
+                $diretorio = "img/galeria";
                 $ext = $imagem->guessClientExtension();
                 $nomeArquivo = "_img_".$rand.".".$ext;
                 $imagem->move($diretorio,$nomeArquivo);
