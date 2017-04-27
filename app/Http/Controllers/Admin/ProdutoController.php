@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Produto;
 use App\Marca;
 use App\Categoria;
 use App\FotoProduto;
+use Image;
 
 class ProdutoController extends Controller
 {
@@ -21,10 +23,9 @@ class ProdutoController extends Controller
 
     public function salvar(Request $request)
     {    
-        
-        $produto = FotoProduto::all();
-       
         $registro = $request->all();
+        
+        
     
         $registro = new Produto();
         $registro->categorias_id = $request->get('categorias');
@@ -35,9 +36,16 @@ class ProdutoController extends Controller
         $registro->descricao = $request->get('descricao');
 
         $registro->save();     
-        
+        $produto = Produto::find($registro->id);
         $id = $registro->id;
+        
+        if($produto->galeria()->count()){
+            $galeria = $produto->galeria()->orderBy('ordem', 'desc')->first();
 
+            $ordemAtual = $galeria->ordem;
+        }else{
+            $ordemAtual = 0;
+        }
 
         
         if($request->hasFile('imagens')){
@@ -48,11 +56,14 @@ class ProdutoController extends Controller
                 $rand = rand(11111,99999);
                 $diretorio = "img/galeria";
                 $ext = $imagem->guessClientExtension();
-                $nomeArquivo = "_img_".$rand.".".$ext;
+                $nomeArquivo = "_img_".$rand.".".$ext;               
                 $imagem->move($diretorio,$nomeArquivo);
                 $registro->produtos_id = $id;
-                $registro->imagem = $diretorio.'/'.$nomeArquivo;
+                $registro->ordem = $ordemAtual + 1;
+                $ordemAtual++;
+                $registro->url = $diretorio.'/'.$nomeArquivo;          
                 $registro->save();
+                
                
             }
         }
