@@ -8,6 +8,8 @@ use App\Produto;
 use App\Marca;
 use App\Categoria;
 use App\FotoProduto;
+use Intervention\Image\Facades\Image;
+
 
 class ProdutoController extends Controller
 {
@@ -18,6 +20,7 @@ class ProdutoController extends Controller
         $produto = Produto::all();
         return view('produtos.index',compact('produto','categorias','marcas'));
     }
+
 
     public function salvar(Request $request)
     {    
@@ -38,7 +41,7 @@ class ProdutoController extends Controller
         
         $id = $registro->id;
 
-
+          
         
         if($request->hasFile('imagens')){
             
@@ -46,7 +49,7 @@ class ProdutoController extends Controller
             foreach($arquivos as $imagem ){
                 $registro = new FotoProduto();
                 $rand = rand(11111,99999);
-                $diretorio = "img/galeria/";
+                $diretorio = "img/galeria";
                 $ext = $imagem->guessClientExtension();
                 $nomeArquivo = "_img_".$rand.".".$ext;
                 $imagem->move($diretorio,$nomeArquivo);
