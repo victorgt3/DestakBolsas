@@ -162,11 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-<<<<<<< HEAD
-        
-=======
-        Intervention\Image\ImageServiceProvider::class,
->>>>>>> e659207a7720f8a3c41decf819242580d5abaf5b
+
 
         /*
          * Package Service Providers...
@@ -182,10 +178,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-<<<<<<< HEAD
         Intervention\Image\ImageServiceProvider::class,
-=======
->>>>>>> e659207a7720f8a3c41decf819242580d5abaf5b
+
 
     ],
 
