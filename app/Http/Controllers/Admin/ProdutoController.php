@@ -53,14 +53,14 @@ class ProdutoController extends Controller
             $arquivos = $request->file('imagens');
             foreach($arquivos as $imagem ){
                 $registro = new FotoProduto();
-                $diretorio = "img/galeria";
-                $nomeArquivo = time().'-'.$imagem->getClientOriginalName();              
+                $diretorio = 'img/galeria';
+                $nomeArquivo = rand(1111,9999).'.'.$imagem->guessClientExtension();            
                 $imagem = Image::make($imagem->getRealPath());
+                $imagem->resize(100,100)->save($diretorio.'/'.$nomeArquivo);
                 $registro->produtos_id = $id;
                 $registro->ordem = $ordemAtual + 1;
                 $ordemAtual++;
                 $registro->url = $diretorio.'/'.$nomeArquivo;         
-                $imagem->resize(100, 100)->save($diretorio.'/'.$nomeArquivo);
                 $registro->save();
                 
                
