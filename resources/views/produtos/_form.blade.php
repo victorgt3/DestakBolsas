@@ -1,4 +1,5 @@
 
+
 <div class="col-md-4 form-group {{ $errors->has('categorias') ? 'has-error' : '' }}">
 <label for="categorias">Categoria</label>
 <select id="categorias" class="form-control" name="categorias">
@@ -84,5 +85,5 @@
 @endif
 </div>  
 <br><br><br><br><br>                      
-                   
+                 
                 

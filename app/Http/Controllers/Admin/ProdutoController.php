@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use App\Produto;
 use App\Marca;
 use App\Categoria;
 use App\FotoProduto;
 use Image;
+use Storage;
+
 
 class ProdutoController extends Controller
 {
@@ -20,6 +23,7 @@ class ProdutoController extends Controller
         $produto = Produto::all();
         return view('produtos.index',compact('produto','categorias','marcas'));
     }
+
 
     public function salvar(Request $request)
     {    
@@ -34,7 +38,6 @@ class ProdutoController extends Controller
         $registro->ativo = $request->get('ativo');
         $registro->valor = $request->get('valor'); 
         $registro->descricao = $request->get('descricao');
-
         $registro->save();     
         $produto = Produto::find($registro->id);
         $id = $registro->id;
@@ -46,6 +49,7 @@ class ProdutoController extends Controller
         }else{
             $ordemAtual = 0;
         }
+        
 
         
         if($request->hasFile('imagens')){
@@ -53,14 +57,15 @@ class ProdutoController extends Controller
             $arquivos = $request->file('imagens');
             foreach($arquivos as $imagem ){
                 $registro = new FotoProduto();
-                $diretorio = 'img/galeria';
-                $nomeArquivo = rand(1111,9999).'.'.$imagem->guessClientExtension();            
+                $diretorio = "upload/galeria/".str_slug($request->get('nome'));
+                File::makeDirectory($diretorio, 0777, true , true);
+                $nomeArquivo = rand(11111,99999).'.'.$imagem->getClientOriginalExtension();         
                 $imagem = Image::make($imagem->getRealPath());
                 $imagem->resize(100,100)->save($diretorio.'/'.$nomeArquivo);
                 $registro->produtos_id = $id;
                 $registro->ordem = $ordemAtual + 1;
                 $ordemAtual++;
-                $registro->url = $diretorio.'/'.$nomeArquivo;         
+                $registro->url = $diretorio.'/'.$nomeArquivo;        
                 $registro->save();
                 
                
