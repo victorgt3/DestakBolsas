@@ -13,6 +13,15 @@
   <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   
 @section('content')
+<script>
+     function enviaform()
+     {
+        $("#carregar").empty();
+        $("#Carregando").show();
+        $("#array").show();
+        $("#idform").submit();
+     }
+</script>
 <div class="container">
 	<div>
          <h1 style="text-align: center;">Cadastro de produto</h1>
@@ -26,10 +35,14 @@
                 </ol>
 
                 <div class="panel-body">
-                    <form action="{{route('produtos.salvar')}}" method="post" enctype="multipart/form-data">
+                    <form id="idform" action="{{route('produtos.salvar')}}" method="post" enctype="multipart/form-data">
                              {{ csrf_field() }}
                              @include('produtos._form')  
-                        <button class="btn btn-info pull-right">Salvar</button>                        
+                        <img id="Carregando" style=" display: none; " width="20" src="images/fluid_dg_skins-loader.gif" />
+                            <div id="array" style="display: none;" >Carregando...</div>
+                            <div id="carregar" > 
+                                <button type="button" onclick="enviaform()" class="btn btn-info" >Salvar</button>   
+                        </div>                      
                     </form>                             
                 </div>
             </div>

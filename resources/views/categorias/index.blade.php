@@ -1,6 +1,15 @@
 @extends('template.temp')
 
 @section('content')
+<script>
+     function enviaform()
+     {
+        $("#carregar").empty();
+        $("#Carregando").show();
+        $("#array").show();
+        $("#idform").submit();
+     }
+</script>
 <div class="container">
 	<div>
          <h1 style="text-align: center;">Categorias</h1>
@@ -14,7 +23,7 @@
                 </ol>
 
                 <div class="panel-body">                                    
-                    <form action="{{url('/categorias/salvar')}}" method="post">
+                    <form id="idform" action="{{url('/categorias/salvar')}}" method="post">
                         {{ csrf_field() }}
                         
                          <div class="form-group {{ $errors->has('nome') ? 'has-error' : '' }}">
@@ -26,8 +35,11 @@
                                 </span>
                             @endif
                         </div>                       
-                        <button class="btn btn-info">Salvar</button>
-                        
+                       <img id="Carregando" style=" display: none; " width="20" src="images/fluid_dg_skins-loader.gif" />
+                            <div id="array" style="display: none;" >Carregando...</div>
+                            <div id="carregar" > 
+                                <button type="button" onclick="enviaform()" class="btn btn-info" >Salvar</button>   
+                            </div>
                     </form>
                     
 

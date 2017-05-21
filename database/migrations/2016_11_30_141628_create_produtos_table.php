@@ -16,7 +16,7 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->increments('id');            
             $table->integer('categorias_id')->unsigned();
-            $table->string('nome');
+            $table->string('nome')->unique();
             $table->text('descricao');                      
             $table->decimal('valor', 6, 2)->default(0);
             $table->enum('ativo', ['S', 'N'])->default('s');

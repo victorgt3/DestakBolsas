@@ -27,9 +27,17 @@ class ProdutoController extends Controller
 
     public function salvar(Request $request)
     {    
+       
         $registro = $request->all();
         
-        
+        $this->validate($request,[
+           'nome'=> 'required|unique:produtos|max:100|min:5',
+       ],[
+           'nome.required'=> 'Prencha o nome',
+           'nome.min'=> 'Minimo de 5  caracteres',
+           'nome.max'=> 'Maximo de 100  caracteres',
+           'nome.unique'=> 'O nome já existente',
+       ]);
     
         $registro = new Produto();
         $registro->categorias_id = $request->get('categorias');
