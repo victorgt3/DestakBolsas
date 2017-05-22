@@ -51,10 +51,8 @@ class ProdutoController extends Controller
         $registro->save();     
         $produto = Produto::find($registro->id);
         $id = $registro->id;
-        
         if($produto->galeria()->count()){
             $galeria = $produto->galeria()->orderBy('ordem', 'desc')->first();
-
             $ordemAtual = $galeria->ordem;
         }else{
             $ordemAtual = 0;
@@ -74,17 +72,12 @@ class ProdutoController extends Controller
                 $registro->url = $diretorio.'/'.$nomeArquivo;        
                 $registro->save();          
             }
-        }
-
-        
-       
+        }   
         \Session::flash('flash_message',[
 			'msg'=>"Produto foi adicionado com Sucesso!",
 			'class'=>"alert-success"
     	]);
 
-    	return redirect()->route('produtos.index');
-
-       
+    	return redirect()->route('produtos.index');      
     }
 }

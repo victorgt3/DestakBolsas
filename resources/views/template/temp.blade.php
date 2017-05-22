@@ -375,13 +375,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Destak Bolsas</small>
-      </h1>
+     
       <ol class="breadcrumb">
-        <li><i class="fa fa-dashboard"></i> Home</li>
-        <li class="active">Destak Bolsas</li>
+        
       </ol>
     </section>
     @if(Session::has('flash_message'))
