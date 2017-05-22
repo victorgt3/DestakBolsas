@@ -37,12 +37,14 @@
                 <div class="panel-body">
                     <form id="idform" action="{{route('produtos.salvar')}}" method="post" enctype="multipart/form-data">
                              {{ csrf_field() }}
-                             @include('produtos._form')  
+                             @include('produtos._form') 
+                      <div class="col-md-12 form-group">       
                         <img id="Carregando" style=" display: none; " width="20" src="images/fluid_dg_skins-loader.gif" />
                             <div id="array" style="display: none;" >Carregando...</div>
                             <div id="carregar" > 
                                 <button type="button" onclick="enviaform()" class="btn btn-info" >Salvar</button>   
-                        </div>                      
+                        </div> 
+                     </div>                     
                     </form>                             
                 </div>
             </div>

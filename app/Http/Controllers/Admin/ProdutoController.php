@@ -27,16 +27,18 @@ class ProdutoController extends Controller
 
     public function salvar(Request $request)
     {    
-       
         $registro = $request->all();
-        
         $this->validate($request,[
-           'nome'=> 'required|unique:produtos|max:100|min:5',
+           'categorias' =>  'required',
+           'marcas' =>  'required',
+           'nome' => 'required|unique:produtos',
+           'valor' =>  'required',
        ],[
+           'categorias.required'=> 'Selecione uma categoria',
+           'marcas.required'=> 'Selecione uma marca',           
            'nome.required'=> 'Prencha o nome',
-           'nome.min'=> 'Minimo de 5  caracteres',
-           'nome.max'=> 'Maximo de 100  caracteres',
            'nome.unique'=> 'O nome já existente',
+           'valor.required'=> 'Prencha um valor',
        ]);
     
         $registro = new Produto();
@@ -57,11 +59,7 @@ class ProdutoController extends Controller
         }else{
             $ordemAtual = 0;
         }
-        
-
-        
         if($request->hasFile('imagens')){
-            
             $arquivos = $request->file('imagens');
             foreach($arquivos as $imagem ){
                 $registro = new FotoProduto();
@@ -74,9 +72,7 @@ class ProdutoController extends Controller
                 $registro->ordem = $ordemAtual + 1;
                 $ordemAtual++;
                 $registro->url = $diretorio.'/'.$nomeArquivo;        
-                $registro->save();
-                
-               
+                $registro->save();          
             }
         }
 

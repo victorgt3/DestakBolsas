@@ -63,10 +63,9 @@
     </span>
 @endif
 </div>    
-<br><br><br><br><br><br><br>
-<div class="box-body pad">
+<div class="col-md-12 form-group">
 <label for="descricao">Descrição</label>
-    <textarea id="descricao" name="descricao" rows="200" cols="100" value="{{isset($produto->descricao) ? $produto->descricao : ''}}">
+    <textarea id="descricao" name="descricao" rows="100" cols="100" value="{{isset($produto->descricao) ? $produto->descricao : ''}}">
         {{isset($produto->descricao) ? $produto->descricao : ''}}
 </textarea> 
 </div>
@@ -84,6 +83,6 @@
     </span>
 @endif
 </div>  
-<br><br><br><br><br>                      
+                  
                  
                 
