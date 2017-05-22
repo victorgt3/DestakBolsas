@@ -37,7 +37,7 @@ class ProdutoController extends Controller
            'categorias.required'=> 'Selecione uma categoria',
            'marcas.required'=> 'Selecione uma marca',           
            'nome.required'=> 'Prencha o nome',
-           'nome.unique'=> 'O nome já existente',
+           'nome.unique'=> 'Registro já existe!',
            'valor.required'=> 'Prencha um valor',
        ]);
     

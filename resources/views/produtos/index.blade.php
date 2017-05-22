@@ -1,6 +1,4 @@
 @extends('template.temp')
-
-  
 @section('content')
 <script>
      function enviaform()
@@ -19,7 +17,6 @@
                     <li><a href="{{url('/home')}}">Home</a></li>
                     <li class="active">Cadastro de produto</li>
                 </ol>
-
                 <div class="panel-body">
                     <form id="idform" action="{{route('produtos.salvar')}}" method="post" enctype="multipart/form-data">
                              {{ csrf_field() }}

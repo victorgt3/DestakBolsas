@@ -31,6 +31,12 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+           'nome' =>  'required|unique:marcas',
+         ],[
+            'nome.required'=> 'Prencha uma marca',
+            'nome.unique'=> 'Registro já existe!',
+         ]);
         \App\Marca::create($request->all());
 
     	\Session::flash('flash_message',[
@@ -63,6 +69,12 @@ class MarcaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+           'nome' =>  'required|unique:marcas',
+         ],[
+            'nome.required'=> 'Prencha uma marca',
+            'nome.unique'=> 'Registro já existe!',
+         ]);
         \App\Marca::find($id)->update($request->all());
 
     	\Session::flash('flash_message',[
