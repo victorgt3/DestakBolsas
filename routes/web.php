@@ -31,4 +31,5 @@ Route::get('/marcas/destroy/{id}', ['uses'=>'Admin\MarcaController@destroy','as'
 Route::get('edit{id}', ['uses'=>'Admin\MarcaController@edit','as'=>'marcas.edit']);
 
 Route::get('produtos', ['uses'=>'Admin\ProdutoController@index','as'=>'produtos.index']);
+Route::get('listaprodutos', ['uses'=>'Admin\ProdutoController@lista','as'=>'produtos.lista']);
 Route::post('produtos/salvar', ['uses'=>'Admin\ProdutoController@salvar','as'=>'produtos.salvar']);

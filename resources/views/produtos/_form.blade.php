@@ -62,17 +62,11 @@
         <strong>{{ $errors->first('valor') }}</strong>
     </span>
 @endif
-</div>    
-<div class="col-md-12 form-group">
-<label for="descricao">Descrição</label>
-    <textarea id="descricao" name="descricao" rows="100" cols="100" value="{{isset($produto->descricao) ? $produto->descricao : ''}}">
-        {{isset($produto->descricao) ? $produto->descricao : ''}}
-</textarea> 
 </div>
 @if(isset($produto->imagem))
 <img height="60" src="{{asset($produto->imagem)}}"  />
 @endif
-<div class="col-md-6 form-group {{ $errors->has('imagens') ? 'has-error' : '' }}">
+<div class="col-md-4 form-group {{ $errors->has('imagens') ? 'has-error' : '' }}">
 <label for="imagens">Imagens</label>
 
 <input type="file" class="form-control" multiple name="imagens[]" class="form-control">
@@ -82,7 +76,14 @@
         <strong>{{ $errors->first('imagens') }}</strong>
     </span>
 @endif
-</div>  
-                  
+</div>    
+<div class="col-md-12 form-group">
+<label for="descricao">Descrição</label>
+    <textarea class="descricao" id="descricao" name="descricao" rows="200" cols="200" value="{{isset($produto->descricao) ? $produto->descricao : ''}}">
+        {{isset($produto->descricao) ? $produto->descricao : ''}}
+</textarea> 
+</div>
+  
+               
                  
                 

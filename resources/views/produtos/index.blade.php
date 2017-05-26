@@ -25,7 +25,7 @@
                         <img id="Carregando" style=" display: none; " width="20" src="images/fluid_dg_skins-loader.gif" />
                             <div id="array" style="display: none;" >Carregando...</div>
                             <div id="carregar" > 
-                                <button type="button" onclick="enviaform()" class="btn btn-info" >Salvar</button>   
+                                <button type="button" onclick="enviaform()" class="btn btn-success" >Salvar</button>   
                         </div> 
                      </div>                     
                     </form>                             
@@ -39,7 +39,7 @@
 <!-- jQuery 2.2.3 -->
 <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- CK Editor -->
-<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<script src="../../plugins/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script>

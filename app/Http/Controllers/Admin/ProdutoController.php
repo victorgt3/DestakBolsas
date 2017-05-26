@@ -80,4 +80,10 @@ class ProdutoController extends Controller
 
     	return redirect()->route('produtos.index');      
     }
+    public function lista()
+    {
+        $produto = Produto::all();
+
+        return view('produtos.lista',compact('produto'));
+    }
 }
