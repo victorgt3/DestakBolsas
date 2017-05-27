@@ -44,7 +44,7 @@
 <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script>
   $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
+    // Replace the <textarea id="descricao"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace('descricao');
     //bootstrap WYSIHTML5 - text editor
