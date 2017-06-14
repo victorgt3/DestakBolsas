@@ -17,6 +17,12 @@ class CategoriaController extends Controller
 
     public function salvar(Request $request)
     {
+         $this->validate($request,[
+           'nome' =>  'required|unique:categorias',
+         ],[
+            'nome.required'=> 'Prencha uma categoria',
+            'nome.unique'=> 'Registro já existe!',
+         ]);
     	\App\Categoria::create($request->all());
 
     	\Session::flash('flash_message',[
@@ -40,6 +46,12 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+           'nome' =>  'required|unique:categorias',
+         ],[
+            'nome.required'=> 'Prencha uma categoria',
+            'nome.unique'=> 'Registro já existe!',
+         ]);
         \App\Categoria::find($id)->update($request->all());
 
     	\Session::flash('flash_message',[
