@@ -63,13 +63,11 @@
     </span>
 @endif
 </div>
-<<<<<<< HEAD
 
-=======
 @if(isset($produto->imagem))
 <img height="60" src="{{asset($produto->imagem)}}"  />
 @endif
->>>>>>> 60a80456405356e59ee0a56a61460d0b56e4ad72
+
 <div class="col-md-4 form-group {{ $errors->has('imagens') ? 'has-error' : '' }}">
 <label for="imagens">Imagens</label>
 
