@@ -13,9 +13,9 @@ class Produto extends Model
         'ativo','marcas_id'
         
         ];
-   public function imagens()
+   public function galeria()
    {
-       return $this->hasMany('App\FotoProduto');
+       return $this->hasMany('App\FotoProduto','produtos_id');
    }
 
    public function addImagens(FotoProduto $img)

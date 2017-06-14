@@ -16,7 +16,8 @@ class CreateFotoprodutosTable extends Migration
         Schema::create('fotoprodutos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('produtos_id')->unsigned();
-            $table->string('imagem'); 
+            $table->string('url');
+            $table->integer('ordem');
             $table->timestamps();
         });
 

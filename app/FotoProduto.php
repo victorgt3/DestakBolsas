@@ -10,12 +10,12 @@ class FotoProduto extends Model
 
     protected $fillable = [
         
-        'produtos_id','imagem'
+        'produtos_id','url','ordem'
         
         ];
         
    public function produto()
    {
-       return $this->belongsTo('App\Produto');
+       return $this->belongsTo('App\Produto','produtos_id');
    }     
 }
