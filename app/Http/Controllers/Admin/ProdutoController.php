@@ -83,6 +83,7 @@ class ProdutoController extends Controller
     public function lista()
     {
         $produto = Produto::all();
+<<<<<<< HEAD
 
         return view('produtos.lista',compact('produto'));
     }
@@ -97,5 +98,9 @@ class ProdutoController extends Controller
             ->where('produtos_id','=',$id)
             ->get();        
         return view('produtos.editar',compact('produto','imagem','categorias','marcas'));
+=======
+
+        return view('produtos.lista',compact('produto'));
+>>>>>>> 60a80456405356e59ee0a56a61460d0b56e4ad72
     }
 }

@@ -27,10 +27,14 @@
                             <div id="carregar" > 
                                 <button type="button" onclick="enviaform()" class="btn btn-info" >Salvar</button>   
                         </div> 
+<<<<<<< HEAD
                      </div>
                       @foreach($imagem as $foto)
                         <img height="100" src="{{asset($foto->url)}}" />
                       @endforeach                     
+=======
+                     </div>                     
+>>>>>>> 60a80456405356e59ee0a56a61460d0b56e4ad72
                     </form>                             
                 </div>
             </div>

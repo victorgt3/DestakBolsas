@@ -28,7 +28,11 @@
                                 <td>{{$produtos->nome}}</td>
                                 <td>
                              
+<<<<<<< HEAD
                                     <a class="btn btn-info" href="{{route('produtos.edit',$produtos->id)}}">Editar</a>
+=======
+                                    <a class="btn btn-info" href="#">Editar</a>
+>>>>>>> 60a80456405356e59ee0a56a61460d0b56e4ad72
                                     <a class="btn btn-warning" href="#">Detalhe</a>
                                     <a class="btn btn-danger" href="#">Deletar</a>
                             
