@@ -15,7 +15,7 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        $marcas = \App\marca::paginate(3);
+        $marcas = \App\marca::orderBy('nome','asc')->paginate(3);
         
 
     	return view('marcas.index',compact('marcas'));

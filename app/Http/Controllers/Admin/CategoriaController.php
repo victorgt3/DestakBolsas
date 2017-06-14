@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use \App\Categoria;
 
 class CategoriaController extends Controller
 {
     public function index()
     {
-    	$categorias = \App\categoria::paginate(3);
         
+    	$categorias = Categoria::orderBy('nome','asc')->paginate(3);
 
     	return view('categorias.index',compact('categorias'));
     }
