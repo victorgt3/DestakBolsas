@@ -32,9 +32,7 @@ Route::get('edit{id}', ['uses'=>'Admin\MarcaController@edit','as'=>'marcas.edit'
 
 Route::get('produtos', ['uses'=>'Admin\ProdutoController@index','as'=>'produtos.index']);
 Route::get('listaprodutos', ['uses'=>'Admin\ProdutoController@lista','as'=>'produtos.lista']);
-<<<<<<< HEAD
 Route::post('produtos/salvar', ['uses'=>'Admin\ProdutoController@salvar','as'=>'produtos.salvar']);
 Route::get('produtosedit{id}', ['uses'=>'Admin\ProdutoController@edit','as'=>'produtos.edit']);
-=======
 Route::post('produtos/salvar', ['uses'=>'Admin\ProdutoController@salvar','as'=>'produtos.salvar']);
->>>>>>> 60a80456405356e59ee0a56a61460d0b56e4ad72
+
