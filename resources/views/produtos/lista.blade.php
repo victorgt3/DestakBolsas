@@ -30,7 +30,6 @@
                              
 
                                     <a class="btn btn-info" href="{{route('produtos.edit',$produtos->id)}}">Editar</a>
-                                    <a class="btn btn-info" href="#">Editar</a>
                                     <a class="btn btn-warning" href="#">Detalhe</a>
                                     <a class="btn btn-danger" href="#">Deletar</a>
                             

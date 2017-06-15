@@ -34,5 +34,5 @@ Route::get('produtos', ['uses'=>'Admin\ProdutoController@index','as'=>'produtos.
 Route::get('listaprodutos', ['uses'=>'Admin\ProdutoController@lista','as'=>'produtos.lista']);
 Route::post('produtos/salvar', ['uses'=>'Admin\ProdutoController@salvar','as'=>'produtos.salvar']);
 Route::get('produtosedit{id}', ['uses'=>'Admin\ProdutoController@edit','as'=>'produtos.edit']);
-Route::post('produtos/salvar', ['uses'=>'Admin\ProdutoController@salvar','as'=>'produtos.salvar']);
+Route::put('produtos/update{id}', ['uses'=>'Admin\ProdutoController@update','as'=>'produtos.update']);
 

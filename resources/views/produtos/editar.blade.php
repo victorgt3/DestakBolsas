@@ -18,14 +18,15 @@
                     <li class="active">Cadastro de produto</li>
                 </ol>
                 <div class="panel-body">
-                    <form id="idform" action="{{route('produtos.salvar')}}" method="post" enctype="multipart/form-data">
+                    <form id="idform" action="{{route('produtos.update',$registro->id)}}" method="post" enctype="multipart/form-data">
                              {{ csrf_field() }}
+                             <input type="hidden" name="_method" value="put">
                              @include('produtos._form') 
                       <div class="col-md-12 form-group">       
                         <img id="Carregando" style=" display: none; " width="20" src="images/fluid_dg_skins-loader.gif" />
                             <div id="array" style="display: none;" >Carregando...</div>
                             <div id="carregar" > 
-                                <button type="button" onclick="enviaform()" class="btn btn-info" >Salvar</button>   
+                                <button type="button" onclick="enviaform()" class="btn btn-info" >Atulizar</button>   
                         </div> 
 
                      </div>
