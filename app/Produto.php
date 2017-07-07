@@ -30,5 +30,15 @@ class Produto extends Model
     public function marca()
    {
        return $this->belongsTo('App\Marca');
+   }
+
+   public function deletarFotos()
+   {
+       foreach($this->galeria as $foto)
+       {
+            $foto->delete();
+       }
+
+       return true;
    }     
 }
