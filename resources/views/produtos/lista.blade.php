@@ -30,7 +30,7 @@
 
                                     <a class="btn btn-info" href="{{route('produtos.edit',$produtos->id)}}">Editar</a>
                                     <a class="btn btn-danger" href="javascript:(confirm('Deseja deletar esse registro?') ? window.location.href='{{route('produtos.destroy',$produtos->id)}}' : FALSE)">Deletar</a>
-                                    <a class="btn btn-info" href="{{route('produtos.addfotos',$produtos->id)}}">Adicionar Fotos</a>
+                                    <a class="btn btn-success" href="{{route('produtos.addfotos',$produtos->id)}}">Adicionar Fotos</a>
                                 </td>
                             </tr>                            
 
