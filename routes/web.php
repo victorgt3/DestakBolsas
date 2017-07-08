@@ -40,3 +40,5 @@ Route::get('produtos/destroy/{id}', ['uses'=>'Admin\ProdutoController@destroy','
 Route::post('produtos/salvarFotos/{id}', ['uses'=>'Admin\ProdutoController@SaveFotos','as'=>'produtos.salvarFotos']);
 
 Route::get('/fotoprodutos/destroy/{id}', ['uses'=>'Admin\FotoProdutoController@destroy','as'=>'fotoprodutos.destroy']);
+
+Route::get('banners', ['uses'=>'Admin\BannerController@index','as'=>'banners.index']);
