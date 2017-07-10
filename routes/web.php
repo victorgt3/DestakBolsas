@@ -42,3 +42,8 @@ Route::post('produtos/salvarFotos/{id}', ['uses'=>'Admin\ProdutoController@SaveF
 Route::get('/fotoprodutos/destroy/{id}', ['uses'=>'Admin\FotoProdutoController@destroy','as'=>'fotoprodutos.destroy']);
 
 Route::get('banners', ['uses'=>'Admin\BannerController@index','as'=>'banners.index']);
+Route::post('banners/save', ['uses'=>'Admin\BannerController@save','as'=>'banners.save']);
+
+
+Route::get('slides', ['uses'=>'Admin\SlideController@index','as'=>'slides.index']);
+Route::post('slides/salvar', ['uses'=>'Admin\SlideController@store','as'=>'slides.store']);

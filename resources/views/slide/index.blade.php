@@ -15,12 +15,12 @@
             <div class="panel panel-default">                
                 <ol class="breadcrumb panel-heading">
                     <li><a href="{{url('/home')}}">Home</a></li>
-                    <li class="active">Cadastro de Banner</li>
+                    <li class="active">Cadastro de Slides</li>
                 </ol>
                 <div class="panel-body">
-                    <form id="idform" action="{{route('banners.save')}}" method="post" enctype="multipart/form-data">
+                    <form id="idform" action="{{route('slides.store')}}" method="post" enctype="multipart/form-data">
                              {{ csrf_field() }}
-                             @include('banner._form') 
+                             @include('slide._form') 
                       <div class="col-md-12 form-group">       
                         <img id="Carregando" style=" display: none; " width="20" src="images/fluid_dg_skins-loader.gif" />
                             <div id="array" style="display: none;" >Carregando...</div>
