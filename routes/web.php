@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','WelcomeController@index');
+Route::get('welcome',['uses'=>'WelcomeController@ListarCategoria','as'=>'template.body']);
+
 
 Auth::routes();
 

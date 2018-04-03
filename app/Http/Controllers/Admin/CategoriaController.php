@@ -15,7 +15,7 @@ class CategoriaController extends Controller
 
     	return view('categorias.index',compact('categorias'));
     }
-
+    
     public function salvar(Request $request)
     {
          $this->validate($request,[

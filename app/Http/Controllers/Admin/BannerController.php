@@ -37,7 +37,7 @@ class BannerController extends Controller
             File::makeDirectory($diretorio, 0777, true , true);
             $nomeArquivo = rand(11111,99999).'.'.$imagem->getClientOriginalExtension();         
             $imagem = Image::make($imagem->getRealPath());
-            $imagem->resize(100,100)->save($diretorio.'/'.$nomeArquivo);
+            $imagem->resize(900,350)->save($diretorio.'/'.$nomeArquivo);
             $registro->imagem = $diretorio.'/'.$nomeArquivo;
                  
          }

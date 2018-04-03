@@ -45,7 +45,7 @@
                         <th>Ação</th>
                     </tr>
                 </thead>
-                    @foreach($imagem as $foto) 
+                @foreach($imagem as $foto) 
                 <tbody>
                     <tr>
                         <th>{{$foto->ordem}}</th>
