@@ -1,9 +1,10 @@
 @extends('template.footer')
 @extends('template.head')
+
 <section id="contact">
   <div class="container">
     <div class="well well-sm">
-      <h3><strong>Contact Us</strong></h3>
+      <h3><strong>Fale Conosco</strong></h3>
     </div>
 	
 	<div class="row">
@@ -12,22 +13,23 @@
     </div>
 
       <div class="col-md-5">
-          <h4><strong>Get in Touch</strong></h4>
-        <form>
+          <h4><strong>Envie sua mensagem</strong></h4>
+        <form action="/enviar" method="post">
+        {{ csrf_field() }}
           <div class="form-group">
-            <input type="text" class="form-control" name="" value="" placeholder="Name">
+            <input type="text" class="form-control" name="nome" value="" placeholder="Nome">
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" name="" value="" placeholder="E-mail">
+            <input type="email" class="form-control" name="email" value="" placeholder="E-mail">
           </div>
           <div class="form-group">
-            <input type="tel" class="form-control" name="" value="" placeholder="Phone">
+            <input type="tel" class="form-control" name="telefone" value="" placeholder="Telefone">
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
+            <textarea class="form-control" name="mensagem" rows="3" placeholder="Mensagem"></textarea>
           </div>
-          <button class="btn btn-default" type="submit" name="button">
-              <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+          <button class="btn btn-info" type="submit" name="button">
+              <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Enviar
           </button>
         </form>
       </div>

@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/','WelcomeController@index');
+Route::get('/',['uses'=>'WelcomeController@index','as'=>'home']);
 Route::get('welcome',['uses'=>'WelcomeController@ListarCategoria','as'=>'template.body']);
 Route::get('/contato',['uses'=>'ContatoController@index','as'=>'contato.index']);
+Route::post('/enviar',['uses'=>'ContatoController@enviaContato','as'=>'contato.enviar']);
 
 Auth::routes();
 
