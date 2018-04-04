@@ -14,19 +14,20 @@ class WelcomeController extends Controller
 {
     /**Listar Categoria **/
 
-    public function index (Request $id)
+    public function index ()
     {
-        $categorias = Categoria::all();
-        $banner = Banner::find($id);
-      
+        $categorias = Categoria::orderBy('nome', 'asc')->get();
+        $banner = Banner::all();
+        
+        
         return view('welcome',compact('categorias','banner'));
 
     }
    
-   public function ListarCategoria(Request $id)
+   public function ListarCategoria()
    {
-        $categorias = Categoria::all();
-        $banner = Banner::find($id);
+        $categorias = Categoria::orderBy('nome', 'asc')->get();
+        $banner = Banner::all();
 
         return view('template.body',compact('categorias','banner'));
    }

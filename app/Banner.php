@@ -10,4 +10,12 @@ class Banner extends Model
      protected $fillable = [
          'nome','descricao','imagem'
          ];
+
+
+    public function ListaOrdenada()
+    {
+        $banner = 'banners'->orderBy('nome', 'asc')->get();
+
+        return $banner;
+    }     
 }

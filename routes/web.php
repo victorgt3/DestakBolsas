@@ -13,7 +13,7 @@
 
 Route::get('/','WelcomeController@index');
 Route::get('welcome',['uses'=>'WelcomeController@ListarCategoria','as'=>'template.body']);
-
+Route::get('/contato',['uses'=>'ContatoController@index','as'=>'contato.index']);
 
 Auth::routes();
 
