@@ -65,7 +65,7 @@ class ProdutoController extends Controller
                 File::makeDirectory($diretorio, 0777, true , true);
                 $nomeArquivo = rand(11111,99999).'.'.$imagem->getClientOriginalExtension();         
                 $imagem = Image::make($imagem->getRealPath());
-                $imagem->resize(100,100)->save($diretorio.'/'.$nomeArquivo);
+                $imagem->resize(700,400)->save($diretorio.'/'.$nomeArquivo);
                 $registro->produtos_id = $id;
                 $registro->ordem = $ordemAtual + 1;
                 $ordemAtual++;
@@ -107,12 +107,10 @@ class ProdutoController extends Controller
         $this->validate($request,[
            'categorias' =>  'required',
            'marcas' =>  'required',
-           'nome' => 'required|unique:produtos',
            'valor' =>  'required',
        ],[
            'categorias.required'=> 'Selecione uma categoria',
            'marcas.required'=> 'Selecione uma marca',           
-           'nome.required'=> 'Prencha o nome',
            'nome.unique'=> 'Registro já existe!',
            'valor.required'=> 'Prencha um valor',
        ]);
@@ -165,7 +163,7 @@ class ProdutoController extends Controller
                         File::makeDirectory($diretorio, 0777, true , true);
                         $nomeArquivo = rand(11111,99999).'.'.$imagem->getClientOriginalExtension();         
                         $imagem = Image::make($imagem->getRealPath());
-                        $imagem->resize(100,100)->save($diretorio.'/'.$nomeArquivo);
+                        $imagem->resize(700,400)->save($diretorio.'/'.$nomeArquivo);
                         $registro->produtos_id = $id;
                         $registro->ordem = $ordemAtual + 1;
                         $ordemAtual++;
@@ -191,7 +189,7 @@ class ProdutoController extends Controller
                         $diretorio = $p1."/".$p2."/".$p3;
                         $nomeArquivo = rand(11111,99999).'.'.$imagem->getClientOriginalExtension();         
                         $imagem = Image::make($imagem->getRealPath());
-                        $imagem->resize(100,100)->save($diretorio.'/'.$nomeArquivo);
+                        $imagem->resize(700,400)->save($diretorio.'/'.$nomeArquivo);
                         $registro->produtos_id = $id;
                         $registro->ordem = $ordemAtual + 1;
                         $ordemAtual++;

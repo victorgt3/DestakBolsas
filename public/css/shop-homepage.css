@@ -1,5 +1,6 @@
-
-
+body {
+  padding-top: 100px;
+}
 
 @media (min-width: 992px) {
   body {
@@ -8,5 +9,6 @@
 }
 
 div .row{
-  padding-top: 54px; 
+  padding-top: 56px;
 }
+

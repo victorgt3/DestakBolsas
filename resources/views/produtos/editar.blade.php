@@ -21,6 +21,7 @@
                     <form id="idform" action="{{route('produtos.update',$produto->id)}}" method="post" enctype="multipart/form-data">
                              {{ csrf_field() }}
                              @include('produtos._formedit')
+                    <input type="hidden" name="_method" value="put">     
                       <div class="col-md-12 form-group">       
                         <img id="Carregando" style=" display: none; " width="20" src="images/fluid_dg_skins-loader.gif" />
                             <div id="array" style="display: none;" >Carregando...</div>

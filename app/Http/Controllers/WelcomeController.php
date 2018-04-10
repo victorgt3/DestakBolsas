@@ -9,6 +9,7 @@ use App\FotoProduto;
 use App\Produto;
 use App\Marca;
 use App\Slide;
+use DB;
 
 class WelcomeController extends Controller
 {
@@ -16,19 +17,22 @@ class WelcomeController extends Controller
 
     public function index ()
     {
+        $produto = DB::table('produtos')
+                        ->Join('fotoprodutos', 'produtos.id', '=', 'fotoprodutos.produtos_id')
+                        ->get();
         $categorias = Categoria::orderBy('nome', 'asc')->get();
         $banner = Banner::all();
-        
-        
-        return view('welcome',compact('categorias','banner'));
+         
+        return view('welcome',compact('categorias','banner','produto'));
 
     }
    
    public function ListarCategoria()
    {
+        $produto = Produto::all();
         $categorias = Categoria::orderBy('nome', 'asc')->get();
         $banner = Banner::all();
-
-        return view('template.body',compact('categorias','banner'));
+       
+        return view('template.body',compact('categorias','banner','produto'));
    }
 }

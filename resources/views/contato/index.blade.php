@@ -1,9 +1,9 @@
-@extends('template.footer')
 @extends('template.head')
-
-<section id="contact">
+@extends('template.footer')
+<div id="teste">
+<section class="section">
   <div class="container">
-    <div class="well well-sm">
+    <div class="well well-sm" >
       <h3><strong>Fale Conosco</strong></h3>
     </div>
 	
@@ -36,3 +36,4 @@
     </div>
   </div>
 </section>
+</div>
