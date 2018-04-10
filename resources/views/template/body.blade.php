@@ -78,7 +78,7 @@
          </a>
        </div>
 
-          <div class="row">
+          <div class="row" id="body">
             @foreach($produto as $produtos)
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
@@ -111,7 +111,7 @@
     <!-- /.container -->
 
  <style>
-    p {
+   #body p{
       max-width: 190px; /* Tamanho */
       overflow: hidden;
       text-overflow: ellipsis;
@@ -120,14 +120,14 @@
 
 
 
-    p {
+    #body p {
       max-width: 300px; /* Tamanho */
       overflow: hidden;
       text-overflow: '... (continuar lendo)';
       white-space: nowrap
     }
 
-    p:hover {
+    #body p:hover {
       text-overflow: clip;
       max-width: none
     }
