@@ -21,7 +21,7 @@
     <div class="col-xs-12 col-sm-4 col-md-4">
       <h5>Pagamentos</h5>
       <ul class="list-unstyled quick-links">
-        <li><img style="width: 200px; height:150px;" src="img/bandeiras.png"></li>
+        <li><img style="width: 200px; height:100px;" src="img/bandeiras.png"></li>
       </ul>
     </div>
   </div>
